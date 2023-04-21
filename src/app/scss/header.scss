@@ -10,56 +10,111 @@
 }
 
 header {
+    height: $size-7xl;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    .bars, .sun {
+        padding: 0rem 1rem;
+        transition: all 2s ease-in;
+    }
+
+    .sun:hover {
+        background-color: $color-btn;
+        transform: rotate(360deg);
+    }
+
 }
 
-.small__screen {
-    display: none;
-}
+
 .large-screen {
     display: none;
 }
 
-.small__screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: $color-400;
-
-    li {
-        margin-top: 2rem 0rem;
-        a {
-            font-size: $size-4xl;
-            font-weight: 500;
-        }
-    }
+.times, .moon {
+    display: none;
 }
+
 
 .button {
     color: $color-200;
     font-size: $size-3xl;
 }
 
-
-.times {
+.small__screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $color-400;
+    padding: 4rem;
+    transition: all 0.9s ease-in;
     display: none;
+
+    li {
+        transform: translateX(30px);
+        font-size: $size-4xl;
+        margin-top: 2rem;
+        a {
+            font-weight: 600;
+            
+            &:hover {
+                color: $color-600;
+                border-bottom: 2px solid $color-600;
+            }
+        }
+
+    }
 }
+
+
+
+
+
 // xs
-// @media(min-width: 475px) {}
+// @media(min-width: 475px) {
+
+// }
 
 // sm
 // @media(min-width: 640px) {}
 
 // md
-// @media(min-width: 768px) {}
+@media(min-width: 768px) {
+    .bars {
+        display: none;
+    }
+
+    .large-screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            color: $color-200;
+            font-size: $size-xl;
+            margin: 0rem 1rem;
+
+            a {
+                transition: color 0.3s ease-in;
+            }
+
+            a:active {
+                color: $color-btn;
+            }
+        }
+        .gap-li {
+            height: $size-3xl;
+            border: 2px solid $color-400;
+        }
+    }
+}
 
 // lg
 // @media(min-width: 1024px) {}

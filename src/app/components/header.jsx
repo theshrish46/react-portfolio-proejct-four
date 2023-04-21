@@ -1,8 +1,8 @@
 import React from 'react';
 import { BsFillSunFill } from 'react-icons/bs';
+import { BsFillMoonFill } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
 import { FaBars } from 'react-icons/fa';
-
 
 // Style files
 import './../scss/global.scss';
@@ -10,18 +10,20 @@ import './../scss/color.scss';
 import './../scss/header.scss';
 
 const header = () => {
+
     return (
+
         <div className='container'>
             <header>
 
-
                 {/* Smaller Screens */}
 
-                <button className='button bars'><FaBars /></button>
-                <button className='button sun'><BsFillSunFill /></button>
-                <button className='button times'><FaTimes /></button>
 
-                <ul className='small__screen'>
+
+                <button id='open' className='button bars'><FaBars /></button>
+                <button id='close' className='button times'><FaTimes /></button>
+
+                <ul className='small__screen' id='menuBar'>
                     <li>
                         <a href="#about">About</a>
                     </li>
@@ -31,7 +33,6 @@ const header = () => {
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
-                    <li></li>
                     <li>
                         <a href="#">Resume</a>
                     </li>
@@ -49,15 +50,14 @@ const header = () => {
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
-                    <li></li>
+                    <li className='gap-li'></li>
                     <li>
                         <a href="#">Resume</a>
                     </li>
-
-                    <li>
-                        <a href="#"><BsFillSunFill /></a>
-                    </li>
                 </ul>
+                <button className='button sun'><BsFillSunFill /></button>
+                <button className='button moon'><BsFillMoonFill /></button>
+
             </header>
         </div>
     )
