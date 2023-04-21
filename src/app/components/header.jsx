@@ -20,8 +20,6 @@ const header = () => {
 
 
 
-                <button id='open' className='button bars'><FaBars /></button>
-                <button id='close' className='button times'><FaTimes /></button>
 
                 <ul className='small__screen' id='menuBar'>
                     <li>
@@ -55,8 +53,10 @@ const header = () => {
                         <a href="#">Resume</a>
                     </li>
                 </ul>
-                <button className='button sun'><BsFillSunFill /></button>
                 <button className='button moon'><BsFillMoonFill /></button>
+                <button className='button sun'><BsFillSunFill /></button>
+                <button id='open' className='button bars'><FaBars /></button>
+                <button id='close' className='button times'><FaTimes /></button>
 
             </header>
         </div>

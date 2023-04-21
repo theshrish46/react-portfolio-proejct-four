@@ -10,10 +10,13 @@
 }
 
 header {
+    width: 100%;
     height: $size-7xl;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: sticky;
+    top: 0;
 
     .bars, .sun {
         padding: 0rem 1rem;
@@ -183,4 +186,9 @@ header {
         }
     }
 }
+}
+
+
+.small__screen {
+    display: none;
 }
