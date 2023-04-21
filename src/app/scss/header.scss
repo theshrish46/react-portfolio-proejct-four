@@ -17,12 +17,10 @@ header {
 
     .bars, .sun {
         padding: 0rem 1rem;
-        transition: all 2s ease-in;
     }
 
     .sun:hover {
         background-color: $color-btn;
-        transform: rotate(360deg);
     }
 
 }
@@ -43,10 +41,11 @@ header {
 }
 
 .small__screen {
+    text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     position: absolute;
     top: 0;
     left: 0;
@@ -54,11 +53,11 @@ header {
     width: 100%;
     background-color: $color-400;
     padding: 4rem;
-    transition: all 0.9s ease-in;
-    display: none;
-
+    // display: none;
+    
     li {
-        transform: translateX(30px);
+        transition: transform 3s ease-in-out;
+        transform: translate(70px);
         font-size: $size-4xl;
         margin-top: 2rem;
         a {
@@ -78,28 +77,49 @@ header {
 
 
 // xs
-// @media(min-width: 475px) {
-
-// }
+@media(min-width: 475px) {
+    .small__screen {
+        li {
+            transition: transform 3s ease-in;
+            transform: translate(130px);
+            a {
+                font-size: $size-4xl;
+            }
+        }
+    }
+}
 
 // sm
-// @media(min-width: 640px) {}
+@media(min-width: 640px) {
+    .small__screen {
+        li {
+            transition: transform 3s ease-in;
+            transform: translate(160px);
+            a {
+                font-size: $size-5xl;
+            }
+        }
+    }
+}
 
 // md
 @media(min-width: 768px) {
     .bars {
         display: none;
     }
-
+    .small__screen {
+        display: none;
+    }
     .large-screen {
+        transition: 0s;
         display: flex;
         justify-content: center;
         align-items: center;
-
+        
         li {
             color: $color-200;
-            font-size: $size-xl;
             margin: 0rem 1rem;
+            transform: none;
 
             a {
                 transition: color 0.3s ease-in;
@@ -117,10 +137,50 @@ header {
 }
 
 // lg
-// @media(min-width: 1024px) {}
+@media(min-width: 1024px) {
+    .small__screen {
+        display: none;
+    }
+
+    .large-screen {
+        transition: none;
+
+        li {
+            margin: 0rem 1rem;
+
+            a {
+                transition: color 0.5s ease-in;
+            }
+
+            a:onClick {
+                color: $color-btn;
+            }
+        .gap-li {
+            height: $size-2xl;
+            border: 2px solid $color-400;
+        }
+    }
+}
 
 // xl
 // @media(min-width: 1280px) {}
 
 // 2xl
-// @media(min-width: 1536px) {}
+@media(min-width: 1536px) {
+    header {
+        height: $size-8xl;
+    }
+    .large-screen {
+        margin: 1rem 0rem;
+        li {
+            a {
+                font-size: $size-xl;
+            }
+        }
+
+        .sun {
+            font-size: $size-3xl;
+        }
+    }
+}
+}
